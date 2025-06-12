@@ -2,8 +2,14 @@
  * @param {number[]} numbers an array of integers
  * @returns {number} the length of the array
  */
+
 function getLength(numbers) {
-  // TODO
+  //TODO
+  let i = 0;
+  while (i < numbers.length) {
+    i++;
+  }
+  return i;
 }
 
 /**
@@ -12,6 +18,11 @@ function getLength(numbers) {
  */
 function getSum(numbers) {
   // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
 }
 
 /**
@@ -20,6 +31,11 @@ function getSum(numbers) {
  */
 function getMean(numbers) {
   // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i] / numbers.length;
+  }
+  return sum;
 }
 
 /**
@@ -28,6 +44,11 @@ function getMean(numbers) {
  */
 function getMin(numbers) {
   // TODO
+  let min = Number.POSITIVE_INFINITY;
+  for (const value of numbers) {
+    min = Math.min(min, value);
+  }
+  return min;
 }
 
 /**
@@ -36,6 +57,11 @@ function getMin(numbers) {
  */
 function getMax(numbers) {
   // TODO
+  let max = Number.NEGATIVE_INFINITY;
+  for (const value of numbers) {
+    max = Math.max(max, value);
+  }
+  return max;
 }
 
 /**
@@ -43,15 +69,33 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
-}
+  let min = Number.POSITIVE_INFINITY;
+  let max = Number.NEGATIVE_INFINITY;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
 
+  let range = max - min;
+  return range;
+}
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
   // TODO
+  let even = [];
+  let i = 0;
+   for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 0)
+      even.push(numbers[i])
+   }
+   return even;
 }
 
 /**
@@ -60,6 +104,13 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
   // TODO
+  let odd = [];
+  let i = 0;
+  for (let i = 0; i < numbers.length; i++){
+  if (numbers[i] % 2 !== 0) 
+    odd.push (numbers[i])
+  }
+  return odd;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
@@ -68,13 +119,16 @@ function getOdds(numbers) {
  * @param {string} commaSeparatedNumbers
  * @returns {number[]} the string converted into an array of numbers
  */
+
+
 function convertStringToNumbers(commaSeparatedNumbers) {
   // Split the string of numbers into an array of strings.
   const strings = commaSeparatedNumbers.split(",");
+  
 
   // Convert the array of strings into an array of numbers
-  const numbers = [];
-  for (const s of strings) {
+   const numbers = [];
+   for (const s of strings) {
     const number = parseInt(s);
     numbers.push(number);
   }

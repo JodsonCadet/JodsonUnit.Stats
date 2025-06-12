@@ -31,11 +31,11 @@ function getSum(numbers) {
  */
 function getMean(numbers) {
   // TODO
-  let sum = 0;
+  let mean = 0;
   for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i] / numbers.length;
+    mean += numbers[i] / numbers.length;
   }
-  return sum;
+  return mean;
 }
 
 /**
@@ -91,11 +91,10 @@ function getEvens(numbers) {
   // TODO
   let even = [];
   let i = 0;
-   for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 == 0)
-      even.push(numbers[i])
-   }
-   return even;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 0) even.push(numbers[i]);
+  }
+  return even;
 }
 
 /**
@@ -106,9 +105,8 @@ function getOdds(numbers) {
   // TODO
   let odd = [];
   let i = 0;
-  for (let i = 0; i < numbers.length; i++){
-  if (numbers[i] % 2 !== 0) 
-    odd.push (numbers[i])
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) odd.push(numbers[i]);
   }
   return odd;
 }
@@ -120,15 +118,13 @@ function getOdds(numbers) {
  * @returns {number[]} the string converted into an array of numbers
  */
 
-
 function convertStringToNumbers(commaSeparatedNumbers) {
   // Split the string of numbers into an array of strings.
   const strings = commaSeparatedNumbers.split(",");
-  
 
   // Convert the array of strings into an array of numbers
-   const numbers = [];
-   for (const s of strings) {
+  const numbers = [];
+  for (const s of strings) {
     const number = parseInt(s);
     numbers.push(number);
   }
